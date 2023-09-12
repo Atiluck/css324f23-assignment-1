@@ -51,4 +51,12 @@ def h1(s):
 def h3(s):
     # implement this function
     board, _, _ = s
-    return 0
+    goal = (1,2,3,4,5,6,7,8,0)
+    res = 0
+    for i in range(0,9):
+        if goal[i] != board[i]:
+            if goal[i] % 3 != board[i] % 3:
+                res+=1
+            if  (goal[i] - 1)//3 != (board[i] - 1)//3:
+                res+=1
+    return res
