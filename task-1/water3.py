@@ -8,14 +8,14 @@ def successors(s):
     x, y, z = s
     # Pour from one to another but possible only pour until the source bottle is empty or until the destination bottle is full.
     t = 8-x
-    if ( y > 0 or z > 0 ) and t > 0: # if (bottle y or z have water) and destination bottle(x) are available
+    if ( y > 0 or z > 0 ) and t > 0: 
     # From 5 or 3 Liters to 8 Liters
         if y < t: 
             yield ((x+y, 0, z), y)
         if z < t:
             yield ((x+z, y, 0), z)  
     t = 5-y
-    if ( x > 0 or z > 0 ) and t > 0: # if (bottle x or z have water) and destination bottle(y) are available
+    if ( x > 0 or z > 0 ) and t > 0: 
     # From 8 or 3 Liters to 5 Liters
         if x > t:
             yield ((x-t, 5, z), t)
@@ -24,7 +24,7 @@ def successors(s):
         if z < t:
             yield ((x, y+z, 0), z)  
     t = 3-z
-    if ( x > 0 or y > 0 ) and t > 0: # if (bottle x or y have water) and destination bottle(z) are available
+    if ( x > 0 or y > 0 ) and t > 0:
     # From 8 or 5 Liters to 3 Liters
         if x > t:
             yield ((x-t, y, 3), t) 

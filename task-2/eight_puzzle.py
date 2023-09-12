@@ -49,14 +49,12 @@ def h1(s):
     return res
 
 def h3(s):
-    # implement this function
     board, _, _ = s
-    goal = (1,2,3,4,5,6,7,8,0)
+    goal = (1, 2, 3, 4, 5, 6, 7, 8, 0)
     res = 0
-    for i in range(0,9):
+
+    for i in range(0, 9):
         if goal[i] != board[i]:
-            if goal[i] % 3 != board[i] % 3:
-                res+=1
-            if  (goal[i] - 1)//3 != (board[i] - 1)//3:
-                res+=1
+            res += (goal[i] % 3 != board[i] % 3) + ((goal[i] - 1) // 3 != (board[i] - 1) // 3)
+
     return res
